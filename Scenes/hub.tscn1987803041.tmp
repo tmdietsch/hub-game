@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://cjo5k8ocfp684"]
+
+[ext_resource type="Script" uid="uid://ch2ybjv3lbq2w" path="res://Scripts/Player.gd" id="1_x21iy"]
+[ext_resource type="PackedScene" uid="uid://besaastvr4xil" path="res://Objects/titus_box.tscn" id="2_2ch6h"]
+[ext_resource type="PackedScene" uid="uid://bp4v10tugs0ho" path="res://Objects/console.tscn" id="3_2ch6h"]
+[ext_resource type="PackedScene" uid="uid://dbmenkitnyl5x" path="res://Scenes/hub_empty.tscn" id="4_oc3mp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hjueh"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_w7r13"]
+sky_material = SubResource("ProceduralSkyMaterial_hjueh")
+
+[sub_resource type="Environment" id="Environment_ysrp0"]
+background_mode = 2
+sky = SubResource("Sky_w7r13")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l5ww0"]
+albedo_color = Color(0.829936, 0.61096805, 0.94588083, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ch6h"]
+albedo_color = Color(0.646382, 0.70699763, 0.9203911, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qlmhu"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6eldl"]
+points = PackedVector3Array(-0.12520654, -0.532801, -0.4805069, 0.022783129, 0.4760704, 0.49888408, 0.16971254, 0.5591441, 0.46417162, 0.23105091, -0.8035912, 0.32045516, 0.40741014, 0.651043, -0.24352328, -0.4827893, 0.59484255, 0.082213186, -0.3628679, -0.68231165, 0.2896967, 0.46904355, -0.65452886, -0.06627126, -0.12744367, 0.8427015, -0.33810276, -0.39343542, -0.6839421, -0.24471663, 0.43825462, 0.62330925, 0.20084947, 0.0841477, 0.977454, 0.11479468, -0.06820232, -0.9764576, -0.12927033, 0.20054972, -0.56312895, -0.4514544, -0.18552664, 0.59545326, -0.4534751, -0.27336287, 0.59226835, 0.40775412, -0.0069364863, -0.47682306, 0.49966025, 0.37582088, -0.5886136, 0.31695515, 0.111579016, 0.5630594, -0.48117727, -0.41725034, 0.5278656, -0.27049688, -0.48454633, -0.59697217, -0.06650971, -0.27974695, 0.90856135, 0.05333608, -0.25019687, -0.8807117, 0.20531891, 0.263647, -0.90277094, -0.1273943, 0.29336792, 0.8715263, -0.15719566, 0.3734115, -0.5263189, -0.32824618, 0.4996626, 0.47664148, -0.0068885577, 0.053105574, 0.8750009, 0.32470253, -0.15454252, -0.5908538, 0.4658794, -0.09727988, -0.7823577, -0.39818847, -0.3876489, -0.49817133, 0.31564978, -0.30067965, -0.58799505, -0.38890144)
+
+[node name="Scene" type="Node3D" unique_id=675697872]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1534538645]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=608181290]
+environment = SubResource("Environment_ysrp0")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1283940200]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=640173402]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013, 1.1833496, 0)
+size = Vector3(55, 3.0761719, 55)
+material = SubResource("StandardMaterial3D_l5ww0")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D" unique_id=1443204910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013, 1.8501658, 0)
+operation = 2
+size = Vector3(50, 6.6191406, 50)
+material = SubResource("StandardMaterial3D_2ch6h")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1871748586]
+script = ExtResource("1_x21iy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1122007371]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3797476, 0)
+mesh = SubResource("CapsuleMesh_qlmhu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=818520622]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1716392, 0)
+shape = SubResource("ConvexPolygonShape3D_6eldl")
+
+[node name="Head" type="Node3D" parent="CharacterBody3D" unique_id=14438272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6445328, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head" unique_id=1467377445]
+
+[node name="CSGBox3D" parent="." unique_id=1482236180 instance=ExtResource("2_2ch6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2374935, 1.2239456, 7.2984924)
+
+[node name="CSGBox3D2" parent="." unique_id=71443765 instance=ExtResource("2_2ch6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.38485, 1.2239456, 18.803505)
+
+[node name="CSGBox3D3" parent="." unique_id=411428900 instance=ExtResource("2_2ch6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.414726, 1.2239418, -0.00308609)
+
+[node name="CSGBox3D4" parent="." unique_id=1950445646 instance=ExtResource("2_2ch6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.432999, 1.2239456, -13.780231)
+
+[node name="CSGBox3D5" parent="." unique_id=722525631 instance=ExtResource("2_2ch6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.143068, 1.2239418, 19.655903)
+
+[node name="CSGBox3D6" parent="." unique_id=395371922 instance=ExtResource("2_2ch6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8608322, 1.2239456, -5.0128403)
+
+[node name="TitusBox" parent="." unique_id=1649698969 instance=ExtResource("2_2ch6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8944726, 0.10797787, -1.6545067)
+size = Vector3(3, 0.7680664, 3)
+
+[node name="TitusBox2" parent="." unique_id=134468018 instance=ExtResource("2_2ch6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1924696, 0.3076849, -1.5852003)
+size = Vector3(3, 1.1674805, 3)
+
+[node name="TitusBox3" parent="." unique_id=1185352975 instance=ExtResource("2_2ch6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.572111, 0.74420834, -5.1277933)
+size = Vector3(3, 2.0405273, 3)
+
+[node name="Console" parent="." unique_id=1379727273 instance=ExtResource("3_2ch6h")]
+transform = Transform3D(-0.11549194, 0, -0.9933084, 0, 1, 0, 0.9933084, 0, -0.11549194, 20.751743, 1.0539457, -1.5998011)
+gameScene = ExtResource("4_oc3mp")

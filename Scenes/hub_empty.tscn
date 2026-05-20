@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://dbmenkitnyl5x"]
+
+[ext_resource type="PackedScene" uid="uid://dflpf8b5w61ce" path="res://Objects/player.tscn" id="1_27mes"]
+[ext_resource type="PackedScene" uid="uid://besaastvr4xil" path="res://Objects/titus_box.tscn" id="2_3ccqg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hjueh"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_w7r13"]
+sky_material = SubResource("ProceduralSkyMaterial_hjueh")
+
+[sub_resource type="Environment" id="Environment_ysrp0"]
+background_mode = 2
+sky = SubResource("Sky_w7r13")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l5ww0"]
+albedo_color = Color(0.829936, 0.61096805, 0.94588083, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ch6h"]
+albedo_color = Color(0.646382, 0.70699763, 0.9203911, 1)
+
+[node name="Scene" type="Node3D" unique_id=675697872]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1534538645]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=608181290]
+environment = SubResource("Environment_ysrp0")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1283940200]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=640173402]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013, 1.1833496, 0)
+size = Vector3(55, 3.0761719, 55)
+material = SubResource("StandardMaterial3D_l5ww0")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D" unique_id=1443204910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013, 1.8501658, 0)
+operation = 2
+size = Vector3(50, 6.6191406, 50)
+material = SubResource("StandardMaterial3D_2ch6h")
+
+[node name="InternalPlayer" parent="." unique_id=1513638264 instance=ExtResource("1_27mes")]
+
+[node name="CSGBox3D" parent="." unique_id=1482236180 instance=ExtResource("2_3ccqg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2374935, 1.2239456, 7.2984924)
+
+[node name="CSGBox3D2" parent="." unique_id=71443765 instance=ExtResource("2_3ccqg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.38485, 1.2239456, 18.803505)
+
+[node name="CSGBox3D3" parent="." unique_id=411428900 instance=ExtResource("2_3ccqg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.414726, 1.2239418, -0.00308609)
+
+[node name="CSGBox3D4" parent="." unique_id=1950445646 instance=ExtResource("2_3ccqg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.432999, 1.2239456, -13.780231)
+
+[node name="CSGBox3D5" parent="." unique_id=722525631 instance=ExtResource("2_3ccqg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.143068, 1.2239418, 19.655903)
+
+[node name="CSGBox3D6" parent="." unique_id=395371922 instance=ExtResource("2_3ccqg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8608322, 1.2239456, -5.0128403)
+
+[node name="TitusBox" parent="." unique_id=1649698969 instance=ExtResource("2_3ccqg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8944726, 0.10797787, -1.6545067)
+size = Vector3(3, 0.7680664, 3)
+
+[node name="TitusBox2" parent="." unique_id=134468018 instance=ExtResource("2_3ccqg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1924696, 0.3076849, -1.5852003)
+size = Vector3(3, 1.1674805, 3)
+
+[node name="TitusBox3" parent="." unique_id=1185352975 instance=ExtResource("2_3ccqg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.572111, 0.74420834, -5.1277933)
+size = Vector3(3, 2.0405273, 3)

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bp4v10tugs0ho"]
+
+[ext_resource type="Script" uid="uid://co41a10y1u56b" path="res://Scripts/console.gd" id="1_5iga3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ewvid"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_av3q7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5iga3"]
+size = Vector3(1.9941406, 0.07543945, 1.9902344)
+
+[node name="GameConsole" type="Node3D" unique_id=1379727273 node_paths=PackedStringArray("viewport", "viewportquad")]
+script = ExtResource("1_5iga3")
+viewport = NodePath("SubViewport")
+viewportquad = NodePath("ViewportQuad")
+
+[node name="ViewportQuad" type="MeshInstance3D" parent="." unique_id=2022459263]
+transform = Transform3D(2, 0, 0, 0, -4.371139e-08, -1.33, 0, 1, -5.813615e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ewvid")
+mesh = SubResource("PlaneMesh_av3q7")
+
+[node name="ConsoleTrigger" type="Area3D" parent="ViewportQuad" unique_id=1251189929]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ViewportQuad/ConsoleTrigger" unique_id=157938189]
+shape = SubResource("BoxShape3D_5iga3")
+
+[node name="SpawnPoint" type="Node3D" parent="." unique_id=1366106311]
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=2090546862]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4

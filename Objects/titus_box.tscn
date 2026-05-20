@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://besaastvr4xil"]
+
+[ext_resource type="Texture2D" uid="uid://c6iwayptyi4ta" path="res://Images/Titus.png" id="1_dcj6w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ch6h"]
+albedo_texture = ExtResource("1_dcj6w")
+normal_scale = 5.22
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dcj6w"]
+
+[node name="TitusBox" type="CSGBox3D" unique_id=1482236180]
+material_override = SubResource("StandardMaterial3D_2ch6h")
+use_collision = true
+size = Vector3(3, 3, 3)
+material = SubResource("StandardMaterial3D_dcj6w")
