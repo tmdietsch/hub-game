@@ -15,7 +15,7 @@ viewport = NodePath("SubViewport")
 viewportquad = NodePath("ViewportQuad")
 
 [node name="ViewportQuad" type="MeshInstance3D" parent="." unique_id=2022459263]
-transform = Transform3D(2, 0, 0, 0, -4.371139e-08, -1.33, 0, 1, -5.813615e-08, 0, 0, 0)
+transform = Transform3D(0.6, 0, 0, 0, -1.3113417e-08, -0.399, 0, 0.3, -1.7440843e-08, -0.006099224, 0.7571447, 0.06434417)
 material_override = SubResource("StandardMaterial3D_ewvid")
 mesh = SubResource("PlaneMesh_av3q7")
 
@@ -28,5 +28,36 @@ shape = SubResource("BoxShape3D_5iga3")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=2090546862]
 handle_input_locally = false
+use_hdr_2d = true
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
+
+[node name="Cabinet" type="CSGCombiner3D" parent="." unique_id=1843603611]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Cabinet" unique_id=605000345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3396017, 0)
+size = Vector3(1.3, 1.225, 1.095)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Cabinet" unique_id=1376090319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.73781407, -0.24375582)
+size = Vector3(1.3, 1, 0.606)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Cabinet" unique_id=1889735184]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4815478, 0)
+size = Vector3(1.3, 0.5001953, 1.095)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cabinet" unique_id=600619333]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.371139e-08, 0.8094529, 2.2181535, 1.0603476)
+operation = 2
+polygon = PackedVector2Array(1, 0, 0.99, 1, 0.42942798, 0.007276535, 1, 0)
+depth = 1.64
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Cabinet" unique_id=27487165]
+transform = Transform3D(1, 0, 0, 0, 0.6573752, 0.7535634, 0, -0.7535634, 0.6573752, 0, 1.3445653, 0.53998524)
+light_energy = 0.309
+light_indirect_energy = 0.802
+light_size = 0.216
+light_specular = 0.0
+spot_range = 2.043977
+spot_angle = 44.106995

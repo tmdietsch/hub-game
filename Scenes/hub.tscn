@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dflpf8b5w61ce" path="res://Objects/player.tscn" id="1_oc3mp"]
 [ext_resource type="PackedScene" uid="uid://besaastvr4xil" path="res://Objects/titus_box.tscn" id="2_2ch6h"]
 [ext_resource type="PackedScene" uid="uid://bp4v10tugs0ho" path="res://Objects/console.tscn" id="3_2ch6h"]
+[ext_resource type="PackedScene" uid="uid://fdog2u5d2558" path="res://Scenes/testing.tscn" id="4_oc3mp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hjueh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -20,8 +21,11 @@ glow_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l5ww0"]
 albedo_color = Color(0.829936, 0.61096805, 0.94588083, 1)
 
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2ch6h"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ch6h"]
 albedo_color = Color(0.646382, 0.70699763, 0.9203911, 1)
+albedo_texture = SubResource("NoiseTexture2D_2ch6h")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2ch6h"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -41,21 +45,6 @@ albedo_color = Color(0.829936, 0.61096805, 0.94588083, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pc3h8"]
 albedo_color = Color(0.646382, 0.70699763, 0.9203911, 1)
-
-[sub_resource type="PackedScene" id="PackedScene_6rof3"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Scene", "Node3D", "DirectionalLight3D", "DirectionalLight3D", "transform", "shadow_enabled", "WorldEnvironment", "WorldEnvironment", "environment", "CSGCombiner3D", "CSGCombiner3D", "use_collision", "CSGBox3D", "CSGBox3D", "transform", "size", "material", "CSGBox3D2", "CSGBox3D", "transform", "operation", "size", "material", "InternalPlayer", "CSGBox3D", "transform", "CSGBox3D2", "transform", "CSGBox3D3", "transform", "CSGBox3D4", "transform", "CSGBox3D5", "transform", "CSGBox3D6", "transform", "TitusBox", "transform", "size", "TitusBox2", "transform", "size", "TitusBox3", "transform", "size"),
-"node_count": 16,
-"node_ids": PackedInt32Array(675697872, 1534538645, 608181290, 1283940200, 640173402, 1443204910, 1513638264, 1482236180, 71443765, 411428900, 1950445646, 722525631, 395371922, 1649698969, 134468018, 1185352975),
-"node_paths": [NodePath("."), NodePath("."), NodePath("."), NodePath("./CSGCombiner3D"), NodePath("./CSGCombiner3D/CSGBox3D"), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath(".")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 1073741824, 0, 3, 2, -1, 2, 4, 0, 5, 1, 0, 1073741825, 0, 7, 6, -1, 1, 8, 2, 0, 1073741826, 0, 10, 9, -1, 1, 11, 3, 0, 1073741827, 0, 13, 12, -1, 3, 14, 4, 15, 5, 16, 6, 0, 1073741828, 0, 18, 17, -1, 4, 19, 7, 20, 8, 21, 9, 22, 10, 0, 1073741829, 0, 2147483647, 23, 11, 0, 0, 1073741830, 0, 2147483647, 24, 12, 1, 25, 13, 0, 1073741831, 0, 2147483647, 26, 14, 1, 27, 15, 0, 1073741832, 0, 2147483647, 28, 16, 1, 29, 17, 0, 1073741833, 0, 2147483647, 30, 18, 1, 31, 19, 0, 1073741834, 0, 2147483647, 32, 20, 1, 33, 21, 0, 1073741835, 0, 2147483647, 34, 22, 1, 35, 23, 0, 1073741836, 0, 2147483647, 36, 24, 2, 37, 25, 38, 26, 0, 1073741837, 0, 2147483647, 39, 27, 2, 40, 28, 41, 29, 0, 1073741838, 0, 2147483647, 42, 30, 2, 43, 31, 44, 32, 0),
-"variants": [Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0), true, SubResource("Environment_imdk4"), true, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013, 1.1833496, 0), Vector3(55, 3.0761719, 55), SubResource("StandardMaterial3D_ourlr"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013, 1.8501658, 0), 2, Vector3(50, 6.6191406, 50), SubResource("StandardMaterial3D_pc3h8"), ExtResource("1_oc3mp"), ExtResource("2_2ch6h"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2374935, 1.2239456, 7.2984924), ExtResource("2_2ch6h"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.38485, 1.2239456, 18.803505), ExtResource("2_2ch6h"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.414726, 1.2239418, -0.00308609), ExtResource("2_2ch6h"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.432999, 1.2239456, -13.780231), ExtResource("2_2ch6h"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.143068, 1.2239418, 19.655903), ExtResource("2_2ch6h"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8608322, 1.2239456, -5.0128403), ExtResource("2_2ch6h"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8944726, 0.10797787, -1.6545067), Vector3(3, 0.7680664, 3), ExtResource("2_2ch6h"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1924696, 0.3076849, -1.5852003), Vector3(3, 1.1674805, 3), ExtResource("2_2ch6h"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.572111, 0.74420834, -5.1277933), Vector3(3, 2.0405273, 3)],
-"version": 3
-}
 
 [sub_resource type="PackedScene" id="PackedScene_lw6cm"]
 _bundled = {
@@ -128,11 +117,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.572111, 0.74420834, -5.127
 size = Vector3(3, 2.0405273, 3)
 
 [node name="Console2" parent="." unique_id=1054980732 instance=ExtResource("3_2ch6h")]
-transform = Transform3D(-0.034775857, 0.05020258, -0.9981334, 0.011037305, 0.99869585, 0.04984629, 0.9993342, -0.009283188, -0.035284553, 5.151576, 1.3118796, 5.2389817)
-gameScene = SubResource("PackedScene_6rof3")
+transform = Transform3D(-0.034775857, 0.05020258, -0.9981334, 0.011037305, 0.99869585, 0.04984629, 0.9993342, -0.009283188, -0.035284553, 5.151576, 0.2154417, 5.2389817)
+gameScene = ExtResource("4_oc3mp")
 spawnDisplace = Vector3(0, 0, -100)
 
 [node name="Console" parent="." unique_id=1379727273 instance=ExtResource("3_2ch6h")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.6294785, 1.3966714, -0.43822956)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.6294785, 0.22765207, -0.43822956)
 gameScene = SubResource("PackedScene_lw6cm")
 spawnDisplace = Vector3(0, 0, 100)

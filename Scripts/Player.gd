@@ -93,7 +93,7 @@ func do_raycast():
 		current_game = collider.get_parent_node_3d().get_parent_node_3d()
 		current_game.set_pause(false)
 		is_in_console = true
-		
+
 func get_local_gravity():
 	if is_in_console:
 		return Vector3.ZERO

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://fdog2u5d2558"]
+
+[ext_resource type="Texture2D" uid="uid://5813r62yrwjv" path="res://icon.svg" id="1_lq4et"]
+[ext_resource type="Script" uid="uid://bd632wq6cqsdy" path="res://Scenes/Player_2D.gd" id="1_siu27"]
+
+[node name="Node3D" type="Node3D" unique_id=125783656]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=144917059]
+
+[node name="Player" type="CharacterBody2D" parent="Node2D" unique_id=1156454665]
+script = ExtResource("1_siu27")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Player" unique_id=1618741539]
+position = Vector2(618.99994, 261)
+scale = Vector2(1.35, 1.35)
+texture = ExtResource("1_lq4et")

@@ -23,3 +23,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6445328, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=343238091]
 fov = 90.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D" unique_id=1811572846]
+visible = false
+light_energy = 10.657
+light_indirect_energy = 8.195
+light_volumetric_fog_energy = 8.635
